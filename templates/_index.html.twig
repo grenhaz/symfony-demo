@@ -1,0 +1,35 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block title %}{% trans %}INDEX{% endtrans %}{% endblock %}
+
+{% block page_contents %}
+    <div class="group">
+        <div class="stick-big">
+            {% for movie in alertMovies %}
+                <a href="{{ path('app_movie', {'id': movie.id}) }}">
+                    <div class="image">
+                        <img src="{{ path('app_movie_image', {'id': movie.id}) }}" />
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="group">
+        <h4>{% trans %}MOVIES.RECENT{% endtrans %}</h4>
+        <div class="movie-list" data-ajax-url="{{ path('app_movies_ajax', {'category': 'recent'}) }}"></div>
+    </div>
+    <div class="group">
+        <h4>{% trans %}MOVIES.MOSTVIEWED{% endtrans %}</h4>
+        <div class="movie-list" data-ajax-url="{{ path('app_movies_ajax', {'category': 'most-viewed'}) }}"></div>
+    </div>
+    <script>
+        $('.stick-big').slick({
+            dots: false,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
+    </script>
+{% endblock %}
+

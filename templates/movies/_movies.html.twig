@@ -1,0 +1,16 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block title %}{% trans %}MOVIES{% endtrans %}{% endblock %}
+
+{% block page_contents %}
+    <div class="group">
+        {% for movie in movies %}
+            <a class="item" rel="popover" data-title="{{ movie.name }}" data-content="{{ movie.descriptionShort }}" href="{{ path('app_movie', {'id': movie.id}) }}">
+                <div class="image">
+                    <img src="{{ path('app_movie_image', {'id': movie.id}) }}" />
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}
+

@@ -1,0 +1,21 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block title %}{{ movie.name }}{% endblock %}
+
+{% block page_contents %}
+    <div class="background">
+        <img src="{{ path('app_movie_image', {'id': movie.id}) }}" />
+        <div class="layer"></div>
+        <div class="layer2"></div>
+    </div>
+    <div class="movie">
+        <video width="100%" height="100%" controls>
+            <source src="{{ path('app_movie_video', {'id': movie.id}) }}" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+        <div class="title">{{ movie.name }}</div>
+        <div class="info">{{ movie.year }} • {{ movie.durationString }} • {% for category in movie.category %}<a href="{{ path('app_categories', {"id": category.id}) }}">{{ category.name }}</a> • {% endfor %}</div>
+        <div class="description">{{ movie.description }}</div>
+    </div>
+{% endblock %}
+

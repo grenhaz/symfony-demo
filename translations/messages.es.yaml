@@ -1,0 +1,13 @@
+APP.TITLE: Demo
+INDEX: Portada
+LOGIN: Validarse
+LOGIN.ALREADY: Ya está validado como
+LOGIN.BUTTON: Acceder
+LOGIN.MESSAGE: Debe validarse para poder continuar.
+LOGIN.PASSWORD: Contraseña
+LOGIN.REMEMBERME: Recordarme
+LOGIN.USERNAME: Usuario
+LOGOUT: Salir
+MOVIES: Películas
+MOVIES.RECENT: Recientemente agregadas
+MOVIES.MOSTVIEWED: Más vistas

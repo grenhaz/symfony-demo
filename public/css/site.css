@@ -1,0 +1,46 @@
+body{font-family:Avenir-Roman,sans-serif;font-size:20px;background-color:#131313;color:#FFF;}
+.main-container{margin-top:75px;padding:32px 64px;}
+header nav{height:72px;text-transform:uppercase;font-size:18px!important;}
+
+.stick-big .image{margin-left:25%;}
+.group{display:block;clear:both;margin-bottom:64px;}
+.group .item{float:left;margin-right:16px;margin-bottom:32px;}
+.item .image{position:relative;width:100%;height:100%;}
+.item .image img{position:absolute;width:100%;height:100%;border-radius:4px;}
+.item{background:linear-gradient(rgb(48, 50, 62), rgb(30, 31, 42)) 0% 0% / cover;border-radius:4px;width:320px;height:200px;}
+/*.item:after{bottom: 0px;
+    content: "";
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0);
+    border-image: initial;
+    transition: border 300ms ease-out 0s;}*/
+.item:hover{border-width: 4px;
+    border-style: solid;
+    border-color: rgba(249, 249, 249, 0.8);
+    border-image: initial;}
+
+.login{border:1px solid #AAA;padding:12px;border-radius:8px;}
+.login .info{margin-bottom:8px;font-size:0.8em;}
+.login h2{border-bottom:1px solid #AAA;}
+.movie-list{min-height:220px;}
+.movie{position:relative;max-width:670px;min-height:382px;margin-top:100px;}
+.movie video{margin-bottom:32px;}
+.movie .title{padding:8px 0px;font-size:1.2em;border-bottom:1px solid #BBB;margin-bottom:8px;}
+.movie .info{font-size:0.8em;padding:8px 0px;}
+.movie .description{padding:16px 0px;}
+.background{position:fixed;top:0;opacity:0.4;width:100%;}
+.background .layer{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to right, #131313 20%, rgba(255,255,255,0));}
+.background .layer2{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom, rgba(255,255,255,0) 90%, #131313);}
+.background img{width:75%;float:right;}
+/* POPOVER */
+.popover-header{color:#333;}
+/* SCREEN */
+@media only screen and (max-width: 992px) {
+    .navbar-collapse{margin-top:24px;margin-left:-16px;margin-right:-16px;padding-left:16px;padding-right:16px;background-color:#343a40;}
+}

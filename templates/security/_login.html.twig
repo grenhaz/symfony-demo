@@ -1,0 +1,62 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block title %}{% trans %}LOGIN{% endtrans %}{% endblock %}
+
+{% block page_contents %}
+<form method="post">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
+    <div class="row">
+        <div class="offset-lg-4 col-lg-4">
+            <div class="login">
+                {% if app.user %}
+                    <div class="info">
+                        {% trans %}LOGIN.ALREADY{% endtrans %} {{ app.user.username }}, <a href="{{ path('app_logout') }}">{% trans %}LOGOUT{% endtrans %}</a>
+                    </div>
+                {% endif %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="h3 mb-3 font-weight-normal">{% trans %}LOGIN.MESSAGE{% endtrans %}</h2>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="inputUsername">{% trans %}LOGIN.USERNAME{% endtrans %}</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="inputPassword">{% trans %}LOGIN.PASSWORD{% endtrans %}</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="password" name="password" id="inputPassword" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+                <div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="checkbox mb-3">
+                                <label>
+                                    <input type="checkbox" name="_remember_me"> {% trans %}LOGIN.REMEMBERME{% endtrans %}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <button class="btn btn-primary" type="submit">{% trans %}LOGIN.BUTTON{% endtrans %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
